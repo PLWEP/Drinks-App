@@ -62,7 +62,7 @@ class MainScreenMobile extends StatelessWidget {
                         Row(
                           children: [
                             Text(
-                              'Rating for this drink ${drink.rating}',
+                              'Rating ${drink.rating}',
                               style: const TextStyle(
                                 fontSize: 15.0,
                                 fontWeight: FontWeight.w600,
