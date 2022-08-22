@@ -73,9 +73,9 @@ class DetailMobilePage extends StatelessWidget {
                       color: Colors.indigoAccent,
                     ),
                   ),
-                  CircleAvatar(
+                  const CircleAvatar(
                     backgroundColor: Colors.white70,
-                    child: const LoveButton(),
+                    child: LoveButton(),
                   ),
                 ],
               ),
@@ -99,7 +99,7 @@ class DetailMobilePage extends StatelessWidget {
                       )
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 8.0,
                     width: 10.0,
                   ),
@@ -152,7 +152,7 @@ class DetailMobilePage extends StatelessWidget {
                     ),
                     child: const Text(
                       "Pesan",
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 15.0,
                         fontWeight: FontWeight.w400,
                       ),
@@ -163,7 +163,7 @@ class DetailMobilePage extends StatelessWidget {
                           content: Text(
                             'Anda memesan ${drink.name}',
                           ),
-                          duration: Duration(seconds: 1),
+                          duration: const Duration(seconds: 1),
                         ),
                       );
                     },
@@ -182,10 +182,10 @@ class LoveButton extends StatefulWidget {
   const LoveButton({Key? key}) : super(key: key);
 
   @override
-  _LoveButtonState createState() => _LoveButtonState();
+  LoveButtonState createState() => LoveButtonState();
 }
 
-class _LoveButtonState extends State<LoveButton> {
+class LoveButtonState extends State<LoveButton> {
   bool isLove = false;
 
   @override
@@ -233,8 +233,8 @@ class DetailWebPage extends StatelessWidget {
                         child: Column(
                           children: [
                             ClipRRect(
-                              child: Image.network(drink.imageAsset),
                               borderRadius: BorderRadius.circular(5),
+                              child: Image.network(drink.imageAsset),
                             ),
                           ],
                         ),
@@ -255,7 +255,7 @@ class DetailWebPage extends StatelessWidget {
                                   Navigator.pop(context);
                                 },
                               ),
-                              Text("Kembali"),
+                              const Text("Kembali"),
                             ],
                           ),
                           Card(
@@ -275,9 +275,9 @@ class DetailWebPage extends StatelessWidget {
                                           color: Colors.indigoAccent,
                                         ),
                                       ),
-                                      CircleAvatar(
+                                      const CircleAvatar(
                                         backgroundColor: Colors.white70,
-                                        child: const LoveButton(),
+                                        child: LoveButton(),
                                       ),
                                     ],
                                   ),
@@ -299,7 +299,7 @@ class DetailWebPage extends StatelessWidget {
                                           )
                                         ],
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 8.0,
                                         width: 10.0,
                                       ),
@@ -357,7 +357,7 @@ class DetailWebPage extends StatelessWidget {
                                           ),
                                           child: const Text(
                                             "Pesan",
-                                            style: const TextStyle(
+                                            style: TextStyle(
                                               fontSize: 15.0,
                                               fontWeight: FontWeight.w400,
                                             ),
@@ -369,7 +369,8 @@ class DetailWebPage extends StatelessWidget {
                                                 content: Text(
                                                   'Anda memesan ${drink.name}',
                                                 ),
-                                                duration: Duration(seconds: 1),
+                                                duration:
+                                                    const Duration(seconds: 1),
                                               ),
                                             );
                                           },

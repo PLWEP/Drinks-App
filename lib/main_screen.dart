@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:drinksapp/model/drink_model.dart';
 import 'package:drinksapp/detail_screen.dart';
@@ -16,11 +14,11 @@ class MainScreen extends StatelessWidget {
       body: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           if (constraints.maxWidth <= 600) {
-            return MainScreenMobile();
+            return const MainScreenMobile();
           } else if (constraints.maxWidth <= 1000) {
-            return MainScreenWeb(gridCount: 3);
+            return const MainScreenWeb(gridCount: 3);
           } else {
-            return MainScreenWeb(gridCount: 6);
+            return const MainScreenWeb(gridCount: 6);
           }
         },
       ),
@@ -68,13 +66,13 @@ class MainScreenMobile extends StatelessWidget {
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
-                            Icon(
+                            const Icon(
                               Icons.star_border_outlined,
                               size: 16.0,
                             )
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 15,
                         ),
                         Text(
@@ -102,12 +100,12 @@ class MainScreenMobile extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: ClipRRect(
-                    child: Image.network(
-                      drink.imageAsset,
-                    ),
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       topRight: Radius.circular(20),
                       bottomRight: Radius.circular(20),
+                    ),
+                    child: Image.network(
+                      drink.imageAsset,
                     ),
                   ),
                 ),
@@ -148,13 +146,13 @@ class MainScreenWeb extends StatelessWidget {
                 children: [
                   Expanded(
                     child: ClipRRect(
+                      borderRadius: const BorderRadius.only(
+                        topRight: Radius.circular(5),
+                        topLeft: Radius.circular(5),
+                      ),
                       child: Image.network(
                         drink.imageAsset,
                         fit: BoxFit.cover,
-                      ),
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(5),
-                        topLeft: Radius.circular(5),
                       ),
                     ),
                   ),
@@ -180,7 +178,7 @@ class MainScreenWeb extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   Padding(
@@ -194,7 +192,7 @@ class MainScreenWeb extends StatelessWidget {
                             fontWeight: FontWeight.w600,
                           ),
                         ),
-                        Icon(
+                        const Icon(
                           Icons.star_border_outlined,
                           size: 13.0,
                         )
