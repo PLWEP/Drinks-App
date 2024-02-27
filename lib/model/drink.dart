@@ -1,21 +1,21 @@
-class Drink {
-  String name;
-  String weight;
-  String rating;
-  String calories;
-  String description;
-  String price;
-  String imageAsset;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  Drink({
-    required this.name,
-    required this.weight,
-    required this.rating,
-    required this.calories,
-    required this.description,
-    required this.price,
-    required this.imageAsset,
-  });
+part 'drink.freezed.dart';
+part 'drink.g.dart';
+
+@freezed
+class Drink with _$Drink {
+  factory Drink({
+    required String name,
+    required String weight,
+    required String rating,
+    required String calories,
+    required String description,
+    required String price,
+    required String imageAsset,
+  }) = _Drink;
+
+  factory Drink.fromJson(Map<String, dynamic> json) => _$DrinkFromJson(json);
 }
 
 var drinkList = [
