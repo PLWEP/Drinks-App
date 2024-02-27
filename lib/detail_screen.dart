@@ -1,5 +1,5 @@
+import 'package:drinksapp/model/drink.dart';
 import 'package:flutter/material.dart';
-import 'package:drinksapp/model/drink_model.dart';
 
 class DetailScreen extends StatelessWidget {
   final Drink drink;

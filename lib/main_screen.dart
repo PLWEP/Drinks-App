@@ -1,5 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:drinksapp/model/drink.dart';
 import 'package:flutter/material.dart';
-import 'package:drinksapp/model/drink_model.dart';
 import 'package:drinksapp/detail_screen.dart';
 
 class MainScreen extends StatelessWidget {
@@ -36,11 +37,16 @@ class MainScreenMobile extends StatelessWidget {
         final Drink drink = drinkList[index];
         return InkWell(
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return DetailScreen(
-                drink: drink,
-              );
-            }));
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return DetailScreen(
+                    drink: drink,
+                  );
+                },
+              ),
+            );
           },
           child: Card(
             shape: RoundedRectangleBorder(
@@ -104,8 +110,11 @@ class MainScreenMobile extends StatelessWidget {
                       topRight: Radius.circular(20),
                       bottomRight: Radius.circular(20),
                     ),
-                    child: Image.network(
-                      drink.imageAsset,
+                    child: CachedNetworkImage(
+                      imageUrl: drink.imageAsset,
+                      placeholder: (context, url) =>
+                          Center(child: CircularProgressIndicator()),
+                      errorWidget: (context, url, error) => Icon(Icons.error),
                     ),
                   ),
                 ),
