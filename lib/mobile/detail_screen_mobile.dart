@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:drinksapp/detail_screen.dart';
+import 'package:drinksapp/love_button.dart';
 import 'package:drinksapp/model/drink.dart';
 import 'package:flutter/material.dart';
 
